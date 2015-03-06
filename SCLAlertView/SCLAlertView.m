@@ -59,6 +59,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @implementation SCLAlertView
 
 CGFloat kCircleHeight;
+CGFloat kCircleIconHeight;
 CGFloat kCircleTopPosition;
 CGFloat kCircleBackgroundTopPosition;
 CGFloat kCircleHeightBackground;
@@ -83,13 +84,14 @@ NSTimer *durationTimer;
     {
         // Default values
         kCircleHeight = 56.0f;
+        kCircleIconHeight = 20.0f;
         kCircleTopPosition = -12.0f;
         kCircleBackgroundTopPosition = -15.0f;
         kCircleHeightBackground = 62.0f;
         kActivityIndicatorHeight = 40.0f;
         self.subTitleY = 70.0f;
         self.subTitleHeight = 90.0f;
-        self.circleIconHeight = 20.0f;
+        self.circleIconHeight = kCircleIconHeight;
         self.windowWidth = 240.0f;
         self.windowHeight = 178.0f;
         self.shouldDismissOnTapOutside = NO;
@@ -651,7 +653,7 @@ NSTimer *durationTimer;
         case Custom:
             viewColor = color;
             iconImage = image;
-            self.circleIconHeight *= 2.0f;
+            self.circleIconHeight  = kCircleIconHeight * 2;
             break;
     }
     
